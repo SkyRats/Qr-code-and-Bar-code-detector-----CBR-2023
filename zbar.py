@@ -2,6 +2,11 @@
 #!pip install zbar
 #!pip install pyzbar
 
+#Ubuntu:
+#sudo apt-get update
+#sudo apt-get -y install zbar-tools
+#download the pyzbar package named python3-pyzbar_0.1.8-3.1_all.deb
+
 #Import libraries 
 import cv2 as cv
 import numpy as np
@@ -10,8 +15,8 @@ import pyzbar.pyzbar as pzb
 
 
 # Create a function to detect Qrcode and Barcode
-webcam = cv.VideoCapture(1)
-def detector(webcam):
+webcam = cv.VideoCapture(1) #define your computer webcam
+def detector(webcam): 
     
     while(True):
       
