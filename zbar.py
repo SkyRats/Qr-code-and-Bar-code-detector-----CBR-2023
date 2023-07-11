@@ -5,7 +5,9 @@
 #Ubuntu:
 #sudo apt-get update
 #sudo apt-get -y install zbar-tools
-#download the pyzbar package named python3-pyzbar_0.1.8-3.1_all.deb
+#two options to install pyzbar:
+#pip install pyzbar
+#Download the file 'python3-pyzbar_0.1.8-3.1_all.deb' from: http://ftp.ubuntu.com/ubuntu/ubuntu/pool/universe/p/pyzbar/ 
 
 #Import libraries 
 import cv2 as cv
