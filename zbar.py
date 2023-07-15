@@ -45,9 +45,14 @@ def detector(webcam):
             cv.polylines(frame, [points], True, (255,0,0),5) #draw a polygon on an image
             
             # Add text over the bounding box
-            points2 = barcode.rect
-            cv.putText(frame, mydata, (points2[0], points2[1]), cv.FONT_HERSHEY_SIMPLEX,
-                      0.9, (255,0,0), 2)
+            points2 = barcode.rect                                                             #creates a rectangle around the bar code
+            pos = (points2[0], points2[1])                                                     #possition using to write the data decoded from the bar code
+            x,y = pos                                                                          #two variables to set the x and y possition of the rectangle that enclose the data decoded from the bar code
+            text_size, _ = cv.getTextSize(mydata, cv.FONT_HERSHEY_SIMPLEX, 1, 0)               #use to get the size of the data
+            text_w, text_h = text_size                                                         #variables used to set the weight and height of the rectangle that enclose the data
+            cv.rectangle(frame, pos, (x + text_w, y - text_h), (255, 0, 0), -1)                #rectangle used to enclose the data
+            cv.putText(frame, mydata, pos, cv.FONT_HERSHEY_SIMPLEX,
+                      0.9, (255,255,255), 2)                                                   #write the data decoded from the bar code
   
         # Display the resulting frame
         cv.imshow('frame', frame)
