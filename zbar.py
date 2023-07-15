@@ -23,7 +23,7 @@ def detector(webcam):
     while(True):
       
         # Capture the video frame by frame
-        video, frame = webcam.read()
+        _, frame = webcam.read()
         
         # Find barcodes and Qr
         for barcode in pzb.decode(frame):
